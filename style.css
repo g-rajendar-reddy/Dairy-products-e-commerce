@@ -419,31 +419,81 @@ body{
 
 
 
-/* ============================= */
-/*  Mobile Devices (max 576px) */
-/* ============================= */
+/* ================= GLOBAL FIXES ================= */
+
+/* Fix image responsiveness */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Fix Bootstrap conflict */
+.products-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+/* ================= HEADER ================= */
+
+header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+}
+
+.logo img {
+  width: 120px;
+}
+
+/* ================= NAV ================= */
+
+.menu ul {
+  display: flex;
+  gap: 20px;
+}
+
+/* ================= BANNER ================= */
+
+.banner .carousel-inner img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+
+/* ================= PRODUCTS ================= */
+
+.products-container {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* ================= FOOTER ================= */
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* ================= MOBILE (≤576px) ================= */
+
 @media (max-width: 576px) {
 
   header {
     flex-direction: column;
-    padding: 10px;
-    gap: 10px;
+    align-items: center;
+    text-align: center;
   }
 
   .menu ul {
     flex-direction: column;
     gap: 10px;
-    align-items: center;
   }
 
   .logo img {
     width: 90px;
-    height: auto;
-  }
-
-  /* Remove unwanted spacing */
-  header div {
-    margin: 5px 0;
   }
 
   /* Banner */
@@ -451,23 +501,23 @@ body{
     height: 250px;
   }
 
-  /* About Section */
-  #about {
-    padding: 30px 15px;
-  }
-
-  #about .imgdp {
-    max-width: 100%;
-  }
-
   /* Products */
-  .row {
-    grid-template-columns: 1fr; /* 1 card per row */
+  .products-container {
+    grid-template-columns: 1fr;
+  }
+
+  /* About */
+  #about {
+    padding: 20px;
+  }
+
+  #about p {
+    text-align: left;
   }
 
   /* Contact */
   #contact form {
-    padding: 20px;
+    padding: 15px;
   }
 
   /* Footer */
@@ -477,66 +527,51 @@ body{
   }
 }
 
+/* ================= TABLETS (577px–768px) ================= */
 
-/* ============================= */
-/*    Tablets (577px - 768px)   */
-/* ============================= */
 @media (min-width: 577px) and (max-width: 768px) {
 
   header {
     flex-wrap: wrap;
-    padding: 10px 20px;
   }
 
   .menu ul {
-    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   .banner .carousel-inner img {
     height: 350px;
   }
 
-  .row {
-    grid-template-columns: repeat(2, 1fr); /* 2 cards */
+  .products-container {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   #about {
-    padding: 40px 20px;
-  }
-
-  .footer-container {
-    flex-direction: column;
-    text-align: center;
+    padding: 30px;
   }
 }
 
+/* ================= SMALL LAPTOPS (769px–1024px) ================= */
 
-/* ============================= */
-/*   Small Laptops (769px–1024px) */
-/* ============================= */
 @media (min-width: 769px) and (max-width: 1024px) {
 
-  .row {
-    grid-template-columns: repeat(3, 1fr); /* 3 cards */
+  .products-container {
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .banner .carousel-inner img {
     height: 500px;
   }
-
-  #about {
-    padding: 50px 40px;
-  }
 }
 
+/* ================= LARGE SCREENS (1025px+) ================= */
 
-/* ============================= */
-/*   Large Screens (1025px+)    */
-/* ============================= */
 @media (min-width: 1025px) {
 
-  .row {
-    grid-template-columns: repeat(4, 1fr); /* 4 cards */
+  .products-container {
+    grid-template-columns: repeat(4, 1fr);
   }
 
   .banner .carousel-inner img {
