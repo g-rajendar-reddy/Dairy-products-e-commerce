@@ -587,3 +587,115 @@ header {
     height: 100vh;
   }
 }
+
+
+
+
+
+/* Hide checkbox */
+#menu-toggle {
+  display: none;
+}
+
+/* Hamburger icon */
+.menu-icon {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* Default menu (desktop) */
+.menu ul {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 576px) {
+
+  header {
+    flex-wrap: wrap;
+    padding: 10px;
+  }
+
+  /* Show hamburger */
+  .menu-icon {
+    display: block;
+  }
+
+  /* Hide menu by default */
+  .menu {
+    width: 100%;
+    display: none;
+  }
+
+  /* Stack menu items */
+  .menu ul {
+    flex-direction: column;
+    background: white;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .menu ul li {
+    padding: 10px;
+    border-top: 1px solid #ddd;
+  }
+
+  /* Show menu when checkbox checked */
+  #menu-toggle:checked + .menu-icon + .menu {
+    display: block;
+  }
+}
+
+
+
+
+
+
+
+@media (max-width: 576px) {
+
+  header {
+    padding: 8px 12px;     /* reduce space */
+    gap: 10px;
+  }
+
+  /* Logo smaller */
+  .logo img {
+    width: 80px;
+    height: auto;
+  }
+
+  /* Hamburger icon */
+  .menu-icon {
+    font-size: 22px;
+  }
+
+  /* Menu dropdown */
+  .menu {
+    width: 100%;
+  }
+
+  .menu ul {
+    flex-direction: column;
+    padding: 10px;
+    gap: 8px;
+  }
+
+  .menu ul li a {
+    font-size: 14px;   /* smaller text */
+  }
+
+  /* Cart button smaller */
+  .btn {
+    padding: 6px 10px;
+    font-size: 14px;
+  }
+
+  /* Profile icon button */
+  button.btn {
+    padding: 5px 8px;
+  }
+}
